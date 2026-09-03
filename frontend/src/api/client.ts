@@ -11,7 +11,7 @@ const getApiBase = (): string => {
       return '';
     }
   }
-  return 'http://127.0.0.1:8000';
+  return 'https://datafect.onrender.com';
 };
 
 export const API_BASE = getApiBase();
