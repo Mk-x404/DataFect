@@ -7,7 +7,12 @@ import {
   ChevronRight,
   AlertTriangle,
   Info,
-  CheckCircle2
+  CheckCircle2,
+  Activity,
+  Gauge,
+  TrendingUp,
+  TrendingDown,
+  Sparkles
 } from 'lucide-react';
 import type { UploadResponse, ColumnProfile } from '../../types';
 import { AnimatedHistogram } from '../charts/AnimatedHistogram';
@@ -174,18 +179,17 @@ export function ColumnInspector({ data }: ColumnInspectorProps) {
         {/* Numeric Dimension Inspector */}
         {activeColumn.type.toLowerCase() === 'numeric' && activeColumn.numeric_stats && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* BoxPlot & Stats Row */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)',
-                gap: '20px',
-              }}
-            >
+            {/* BoxPlot & Parametric Stats Row */}
+            <div className="column-stats-row">
               <Card variant="flat" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
-                  BoxPlot & Five-Number Summary
-                </h3>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
+                    BoxPlot & Five-Number Summary
+                  </h3>
+                  <Badge variant="neutral" size="sm">
+                    IQR: {((activeColumn.numeric_stats.q3 ?? 0) - (activeColumn.numeric_stats.q1 ?? 0)).toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                  </Badge>
+                </div>
                 <BoxPlot
                   min={activeColumn.numeric_stats.min ?? 0}
                   q1={activeColumn.numeric_stats.q1 ?? 0}
@@ -198,116 +202,190 @@ export function ColumnInspector({ data }: ColumnInspectorProps) {
                 />
               </Card>
 
+              {/* Parametric Statistics Card */}
               <Card variant="flat" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
-                  Parametric Statistics
-                </h3>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <Activity size={15} style={{ color: 'var(--color-info)' }} />
+                    <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
+                      Parametric Statistics
+                    </h3>
+                  </div>
+                  <Badge variant="neutral" size="sm" style={{ fontFamily: 'var(--font-mono)' }}>
+                    n = {activeColumn.numeric_stats.n_valid?.toLocaleString() ?? 'N/A'}
+                  </Badge>
+                </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '13px' }}>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>Mean</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.mean != null ? activeColumn.numeric_stats.mean.toLocaleString() : 'N/A'}
-                    </div>
+                <div className="parametric-metric-grid">
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">Mean</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.mean != null ? activeColumn.numeric_stats.mean.toLocaleString(undefined, { maximumFractionDigits: 3 }) : 'N/A'}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>Median</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.median != null && Number.isFinite(activeColumn.numeric_stats.median) ? activeColumn.numeric_stats.median.toLocaleString() : 'N/A'}
-                    </div>
+
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">Median</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.median != null ? activeColumn.numeric_stats.median.toLocaleString(undefined, { maximumFractionDigits: 3 }) : 'N/A'}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>Std Dev</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.std_dev != null && Number.isFinite(activeColumn.numeric_stats.std_dev) ? activeColumn.numeric_stats.std_dev.toLocaleString() : 'N/A'}
-                    </div>
+
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">Std Dev (σ)</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.std_dev != null ? activeColumn.numeric_stats.std_dev.toLocaleString(undefined, { maximumFractionDigits: 3 }) : 'N/A'}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>CV (Coef Var)</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.cv != null && Number.isFinite(activeColumn.numeric_stats.cv) ? activeColumn.numeric_stats.cv.toFixed(3) : 'N/A'}
-                    </div>
+
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">Variance (σ²)</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.variance != null ? activeColumn.numeric_stats.variance.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 'N/A'}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>Skewness</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.skewness != null && Number.isFinite(activeColumn.numeric_stats.skewness) ? activeColumn.numeric_stats.skewness.toFixed(3) : 'N/A'}
-                    </div>
+
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">CV (Volatility)</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.cv != null ? `${(activeColumn.numeric_stats.cv * 100).toFixed(1)}%` : 'N/A'}
+                    </span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>Kurtosis</div>
-                    <div className="tabular font-mono" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--color-ink)' }}>
-                      {activeColumn.numeric_stats.kurtosis != null && Number.isFinite(activeColumn.numeric_stats.kurtosis) ? activeColumn.numeric_stats.kurtosis.toFixed(3) : 'N/A'}
-                    </div>
+
+                  <div className="metric-stat-tile">
+                    <span className="metric-stat-label">Span Range</span>
+                    <span className="metric-stat-value">
+                      {activeColumn.numeric_stats.range != null ? activeColumn.numeric_stats.range.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 'N/A'}
+                    </span>
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    borderTop: '1px solid var(--color-hairline)',
-                    paddingTop: '12px',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    fontSize: '12px',
-                  }}
-                >
-                  <span>Outliers: <strong className="tabular" style={{ color: 'var(--color-critical-text)' }}>{activeColumn.numeric_stats.outlier_count ?? 0} ({(activeColumn.numeric_stats.outlier_percent ?? 0).toFixed(1)}%)</strong></span>
-                  <span>Zeroes: <strong className="tabular">{activeColumn.numeric_stats.zero_count ?? 0}</strong></span>
-                  <span>Negatives: <strong className="tabular" style={{ color: 'var(--color-critical-text)' }}>{activeColumn.numeric_stats.negative_count ?? 0}</strong></span>
+                {/* Anomaly Readout Strip */}
+                <div className="anomaly-pill-strip">
+                  <div className="anomaly-pill">
+                    <span style={{ color: 'var(--color-ink-muted)' }}>Outliers:</span>
+                    <strong className="tabular font-mono" style={{ color: (activeColumn.numeric_stats.outlier_count ?? 0) > 0 ? 'var(--color-critical-text)' : 'var(--color-success-text)' }}>
+                      {activeColumn.numeric_stats.outlier_count ?? 0} ({(activeColumn.numeric_stats.outlier_percent ?? 0).toFixed(1)}%)
+                    </strong>
+                  </div>
+
+                  <div className="anomaly-pill">
+                    <span style={{ color: 'var(--color-ink-muted)' }}>Zeroes:</span>
+                    <strong className="tabular font-mono" style={{ color: 'var(--color-ink)' }}>
+                      {activeColumn.numeric_stats.zero_count ?? 0}
+                    </strong>
+                  </div>
+
+                  <div className="anomaly-pill">
+                    <span style={{ color: 'var(--color-ink-muted)' }}>Negatives:</span>
+                    <strong className="tabular font-mono" style={{ color: (activeColumn.numeric_stats.negative_count ?? 0) > 0 ? 'var(--color-critical-text)' : 'var(--color-ink)' }}>
+                      {activeColumn.numeric_stats.negative_count ?? 0}
+                    </strong>
+                  </div>
                 </div>
               </Card>
             </div>
 
-            {/* Histogram & Distribution assessment */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr)',
-                gap: '20px',
-              }}
-            >
-              <Card variant="flat" style={{ height: '340px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
-                  Empirical Frequency Distribution
-                </h3>
-                <div style={{ flexGrow: 1 }}>
+            {/* Histogram & Refined Distribution Assessment Row */}
+            <div className="column-distribution-row">
+              <Card variant="flat" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px', minHeight: '340px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
+                    Empirical Frequency Distribution
+                  </h3>
+                  <span style={{ fontSize: '11px', color: 'var(--color-ink-muted)', fontFamily: 'var(--font-mono)' }}>
+                    {activeColumn.numeric_stats.histogram?.length ?? 0} discrete bins
+                  </span>
+                </div>
+                <div style={{ flexGrow: 1, minHeight: '260px' }}>
                   <AnimatedHistogram data={activeColumn.numeric_stats.histogram || []} />
                 </div>
               </Card>
 
+              {/* Distribution Assessment Card */}
               <Card variant="flat" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
-                  Distribution Assessment
-                </h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <Gauge size={15} style={{ color: 'var(--color-brand-lake)' }} />
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-ink)' }}>
+                    Distribution Assessment
+                  </h3>
+                </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
+                {/* Hero Shape Banner */}
+                <div className="distribution-shape-hero">
                   <div>
-                    <span style={{ color: 'var(--color-ink-muted)', fontSize: '11px', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Shape Detection
-                    </span>
-                    <div style={{ color: 'var(--color-info-text)', fontWeight: 700, fontSize: '15px', marginTop: '2px' }}>
-                      {activeColumn.numeric_stats.distribution_shape || 'Undetermined'}
+                    <div style={{ fontSize: '10.5px', textTransform: 'uppercase', fontWeight: 600, color: 'var(--color-brand-lake-deep)', letterSpacing: '0.04em' }}>
+                      Identified Distribution Shape
+                    </div>
+                    <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-ink)', marginTop: '2px', textTransform: 'capitalize' }}>
+                      {activeColumn.numeric_stats.distribution_shape || 'Empirical Distribution'}
                     </div>
                   </div>
+                  <Badge variant={Math.abs(activeColumn.numeric_stats.skewness ?? 0) < 0.5 ? 'success' : 'warning'} size="sm">
+                    {Math.abs(activeColumn.numeric_stats.skewness ?? 0) < 0.5 ? 'Symmetric' : 'Skewed'}
+                  </Badge>
+                </div>
 
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <span style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Skewness:</span>
-                      <Badge variant="info" size="sm">{activeColumn.numeric_stats.skewness_label || 'Normal'}</Badge>
+                {/* Analytical Diagnostics */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {/* Skewness Assessment */}
+                  <div className="assessment-indicator-card">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                        {(activeColumn.numeric_stats.skewness ?? 0) > 0.3 ? (
+                          <TrendingUp size={13} style={{ color: 'var(--color-warning)' }} />
+                        ) : (activeColumn.numeric_stats.skewness ?? 0) < -0.3 ? (
+                          <TrendingDown size={13} style={{ color: 'var(--color-warning)' }} />
+                        ) : (
+                          <CheckCircle2 size={13} style={{ color: 'var(--color-success)' }} />
+                        )}
+                        <strong style={{ fontSize: '12px', color: 'var(--color-ink)' }}>Skewness: {activeColumn.numeric_stats.skewness?.toFixed(3) ?? 'N/A'}</strong>
+                      </div>
+                      <Badge variant="neutral" size="sm">
+                        {activeColumn.numeric_stats.skewness_label || 'Normal'}
+                      </Badge>
                     </div>
-                    <p style={{ fontSize: '12px', color: 'var(--color-ink-secondary)', marginTop: '2px' }}>
-                      {activeColumn.numeric_stats.skewness_explanation || 'No skewness detected.'}
+                    <p style={{ fontSize: '12px', color: 'var(--color-ink-secondary)', margin: 0 }}>
+                      {activeColumn.numeric_stats.skewness_explanation || 'Distribution exhibits balanced symmetry around the central mean.'}
                     </p>
                   </div>
 
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <span style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Kurtosis:</span>
-                      <Badge variant="info" size="sm">{activeColumn.numeric_stats.kurtosis_label || 'Mesokurtic'}</Badge>
+                  {/* Kurtosis Assessment */}
+                  <div className="assessment-indicator-card">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <strong style={{ fontSize: '12px', color: 'var(--color-ink)' }}>
+                        Kurtosis: {activeColumn.numeric_stats.kurtosis?.toFixed(3) ?? 'N/A'}
+                      </strong>
+                      <Badge variant="neutral" size="sm">
+                        {activeColumn.numeric_stats.kurtosis_label || 'Mesokurtic'}
+                      </Badge>
                     </div>
-                    <p style={{ fontSize: '12px', color: 'var(--color-ink-secondary)', marginTop: '2px' }}>
-                      {activeColumn.numeric_stats.kurtosis_explanation || 'Standard tail weight.'}
+                    <p style={{ fontSize: '12px', color: 'var(--color-ink-secondary)', margin: 0 }}>
+                      {activeColumn.numeric_stats.kurtosis_explanation || 'Standard tail thickness consistent with Gaussian bell curves.'}
                     </p>
+                  </div>
+
+                  {/* Machine Learning Implication */}
+                  <div
+                    style={{
+                      padding: '10px 12px',
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-hairline)',
+                      borderRadius: 'var(--radius-sm)',
+                      display: 'flex',
+                      gap: '8px',
+                      alignItems: 'flex-start',
+                    }}
+                  >
+                    <Sparkles size={14} style={{ color: 'var(--color-ai)', flexShrink: 0, marginTop: '2px' }} />
+                    <div style={{ fontSize: '11.5px', color: 'var(--color-ink-secondary)', lineHeight: 1.4 }}>
+                      <strong style={{ color: 'var(--color-ink)', display: 'block', marginBottom: '2px' }}>AutoML Implication:</strong>
+                      {Math.abs(activeColumn.numeric_stats.skewness ?? 0) >= 1.0
+                        ? 'High skewness detected. Logarithmic or Box-Cox transformation recommended before linear modeling.'
+                        : (activeColumn.numeric_stats.outlier_percent ?? 0) > 4
+                          ? 'Notable outlier concentration (>4%). Tree-based algorithms (Random Forest, Gradient Boosting) are more robust than distance-based models.'
+                          : 'Symmetric, well-behaved distribution suitable for standard scaling (Z-score) and linear regression.'}
+                    </div>
                   </div>
                 </div>
               </Card>
