@@ -52,6 +52,7 @@ export function ColumnInspector({ data }: ColumnInspectorProps) {
       {/* Left Sidebar Picker: Column List */}
       <Card
         variant="flat"
+        className="inspector-column-sidebar"
         style={{
           padding: '16px 12px',
           display: 'flex',
@@ -68,13 +69,14 @@ export function ColumnInspector({ data }: ColumnInspectorProps) {
           <Badge variant="neutral" size="sm">{column_profiles.length}</Badge>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+        <div className="inspector-column-list-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
           {column_profiles.map((col, index) => {
             const isSelected = selectedColIndex === index;
             return (
               <button
                 key={col.name}
                 onClick={() => setSelectedColIndex(index)}
+                className={isSelected ? 'selected' : undefined}
                 style={{
                   display: 'flex',
                   alignItems: 'center',

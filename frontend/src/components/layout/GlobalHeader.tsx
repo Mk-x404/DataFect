@@ -46,34 +46,13 @@ export function GlobalHeader({ onReset, showResetButton = false }: GlobalHeaderP
         </div>
 
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-          <span
-            style={{
-              fontSize: '18px',
-              fontFamily: 'var(--font-sans)',
-              fontWeight: 700,
-              letterSpacing: '-0.025em',
-              color: 'var(--color-ink)',
-            }}
-          >
+          <span className="header-brand-title">
             DataFect
           </span>
-          <span
-            style={{
-              marginLeft: '10px',
-              fontSize: '11.5px',
-              color: 'var(--color-ink)',
-              fontWeight: 600,
-              backgroundColor: 'var(--color-brand-lake-subtle)',
-              border: '1px solid var(--color-brand-lake-border)',
-              padding: '2px 9px',
-              borderRadius: '9999px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '5px'
-            }}
-          >
+          <span className="header-developer-badge">
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--color-brand-lake)' }} />
-            Developed by <strong style={{ color: 'var(--color-brand-lake-deep)', fontWeight: 700 }}>Muhib</strong>
+            <span className="header-developer-text-full">Developed by </span>
+            <strong style={{ color: 'var(--color-brand-lake-deep)', fontWeight: 700 }}>Muhib</strong>
           </span>
         </div>
       </div>
@@ -85,6 +64,7 @@ export function GlobalHeader({ onReset, showResetButton = false }: GlobalHeaderP
           target="_blank"
           rel="noopener noreferrer"
           title="Muhib's GitHub"
+          className="header-actions-social"
           style={{
             color: 'var(--color-ink-muted)',
             display: 'inline-flex',
@@ -115,6 +95,7 @@ export function GlobalHeader({ onReset, showResetButton = false }: GlobalHeaderP
           target="_blank"
           rel="noopener noreferrer"
           title="Muhib's LinkedIn"
+          className="header-actions-social"
           style={{
             color: 'var(--color-ink-muted)',
             display: 'inline-flex',
@@ -148,7 +129,8 @@ export function GlobalHeader({ onReset, showResetButton = false }: GlobalHeaderP
             onClick={onReset}
             icon={<ArrowLeft size={14} />}
           >
-            Load Another File
+            <span className="header-reset-text-full">Load Another File</span>
+            <span className="header-reset-text-short">New File</span>
           </Button>
         )}
       </div>

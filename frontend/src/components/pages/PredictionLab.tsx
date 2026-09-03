@@ -55,7 +55,7 @@ export function PredictionLab({ data, onRetrain, isRetraining }: PredictionLabPr
             <label style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-ink-muted)', textTransform: 'uppercase' }}>
               Target Column:
             </label>
-            <div style={{ display: 'flex', gap: '8px' }}>
+            <div className="prediction-target-row" style={{ display: 'flex', gap: '8px' }}>
               <select
                 value={selectedTarget}
                 onChange={(e) => setSelectedTarget(e.target.value)}

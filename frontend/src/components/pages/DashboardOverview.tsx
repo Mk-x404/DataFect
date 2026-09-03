@@ -233,7 +233,7 @@ export function DashboardOverview({ data }: DashboardOverviewProps) {
           </div>
 
           {/* Table */}
-          <div style={{ overflowX: 'auto' }}>
+          <div className="responsive-table-scroll" style={{ overflowX: 'auto' }}>
             <table
               style={{
                 width: '100%',

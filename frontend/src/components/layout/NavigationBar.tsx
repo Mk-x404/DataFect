@@ -38,20 +38,7 @@ export function NavigationBar({
   reducedMotion = false,
 }: NavigationBarProps) {
   return (
-    <nav
-      style={{
-        borderBottom: '1px solid var(--color-hairline)',
-        backgroundColor: 'var(--color-surface)',
-        padding: '0 24px',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'sticky',
-        top: '98px',
-        zIndex: 'var(--z-sticky)',
-        overflowX: 'auto',
-        scrollbarWidth: 'none',
-      }}
-    >
+    <nav className="nav-tabs-container">
       <ul
         style={{
           display: 'flex',

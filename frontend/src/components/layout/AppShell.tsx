@@ -46,15 +46,7 @@ export function AppShell({
       )}
 
       {/* Main Content Area */}
-      <main
-        style={{
-          flexGrow: 1,
-          padding: data ? '24px 32px 64px 32px' : '0',
-          maxWidth: data ? '1320px' : '100%',
-          width: '100%',
-          margin: '0 auto',
-        }}
-      >
+      <main className={data ? 'app-main-content' : undefined}>
         {children}
       </main>
     </div>

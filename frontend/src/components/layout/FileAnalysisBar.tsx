@@ -7,23 +7,7 @@ export interface FileAnalysisBarProps {
 
 export function FileAnalysisBar({ metadata }: FileAnalysisBarProps) {
   return (
-    <div
-      style={{
-        borderBottom: '1px solid var(--color-hairline)',
-        backgroundColor: 'var(--color-surface)',
-        padding: '0 24px',
-        height: '42px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        fontSize: '12px',
-        color: 'var(--color-ink-secondary)',
-        position: 'sticky',
-        top: '56px',
-        zIndex: 'var(--z-sticky)',
-        overflowX: 'auto',
-      }}
-    >
+    <div className="file-analysis-bar">
       {/* Left: File name & delimiter */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 'max-content' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

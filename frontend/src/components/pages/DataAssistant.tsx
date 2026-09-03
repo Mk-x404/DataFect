@@ -66,10 +66,11 @@ export function DataAssistant({ data }: DataAssistantProps) {
   };
 
   return (
-    <div className="inspector-grid" style={{ height: '660px' }}>
+    <div className="inspector-grid assistant-grid-container">
       {/* Left Panel: Grounded Context Sidebar */}
       <Card
         variant="flat"
+        className="assistant-sidebar-panel"
         style={{
           padding: '20px',
           display: 'flex',
@@ -182,12 +183,12 @@ export function DataAssistant({ data }: DataAssistantProps) {
       {/* Right Panel: Chat Conversation Portal */}
       <Card
         variant="flat"
+        className="assistant-chat-panel"
         style={{
           padding: '20px',
           display: 'grid',
           gridTemplateRows: 'auto 1fr auto',
           gap: '14px',
-          height: '100%',
           minWidth: 0,
         }}
       >
