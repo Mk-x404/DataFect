@@ -1,0 +1,142 @@
+:root {
+  /* Surface & Monochrome Canvas */
+  --color-canvas: #F7F7F6;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F1F1EF;
+  --color-surface-hover: #E9E9E6;
+  --color-surface-active: #E2E2DF;
+  
+  /* Hairline Borders */
+  --color-hairline: #E4E4E0;
+  --color-hairline-strong: #CECED4;
+  --color-hairline-subtle: #EDEDEA;
+  
+  /* Text & Ink Tokens */
+  --color-ink: #0F1011;
+  --color-ink-secondary: #4A4B4C;
+  --color-ink-muted: #78797A;
+  --color-ink-faint: #A2A3A4;
+  --color-ink-inverse: #FFFFFF;
+
+  /* Semantic Accents & Alerts */
+  --color-critical: #E5484D;
+  --color-critical-subtle: #FFEBEB;
+  --color-critical-text: #CE2C31;
+  --color-critical-border: #F3B0B2;
+
+  --color-warning: #F76B15;
+  --color-warning-subtle: #FFF1E5;
+  --color-warning-text: #BD4B00;
+  --color-warning-border: #FBC59E;
+
+  --color-info: #0091FF;
+  --color-info-subtle: #EBF5FF;
+  --color-info-text: #0070F3;
+  --color-info-border: #B5DCFC;
+
+  --color-success: #30A46C;
+  --color-success-subtle: #EBF8F2;
+  --color-success-text: #18794E;
+  --color-success-border: #9ADABA;
+
+  --color-ai: #8E4EC6;
+  --color-ai-subtle: #F7F0FD;
+  --color-ai-text: #6E33A6;
+  --color-ai-border: #D8B7F5;
+
+  /* Core Brand Identity Palette (60-30-15-10 Color Architecture) */
+  --color-brand-primary: #0F1011;              /* Primary Brand Canvas/Ink (60%) */
+  --color-brand-secondary: #0284C7;            /* Lake Blue Brand Color (15% Visual Weight) */
+  --color-brand-lake: #0284C7;                 /* Lake Blue Core */
+  --color-brand-lake-deep: #0369A1;            /* Lake Blue Deep Contrast */
+  --color-brand-lake-subtle: #E0F2FE;          /* Lake Blue Subtle Wash */
+  --color-brand-lake-border: #7DD3FC;          /* Lake Blue Boundary */
+  --color-brand-ai: #8E4EC6;                   /* AI Engine Violet (15%) */
+
+  /* Legacy & Semantic Mapping Aliases */
+  --bg-primary: var(--color-canvas);
+  --bg-secondary: var(--color-surface-subtle);
+  --bg-tertiary: var(--color-surface-hover);
+  --bg-card: var(--color-surface);
+  
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-secondary);
+  --text-muted: var(--color-ink-muted);
+  --border-color: var(--color-hairline);
+  --border-focus: var(--color-ink);
+
+  --accent-indigo: var(--color-info-text);
+  --accent-indigo-light: var(--color-info-subtle);
+  --accent-coral: var(--color-critical);
+  --accent-coral-light: var(--color-critical-subtle);
+  --accent-amber: var(--color-warning);
+  --accent-amber-light: var(--color-warning-subtle);
+  --accent-emerald: var(--color-success);
+  --accent-emerald-light: var(--color-success-subtle);
+  --accent-violet: var(--color-ai);
+  --accent-violet-light: var(--color-ai-subtle);
+
+  /* Visualization Diverging Scale (Correlations & Metrics) */
+  --viz-corr-neg-strong: #E5484D;
+  --viz-corr-neg-mod: #F9A8A8;
+  --viz-corr-neutral: #F1F1EF;
+  --viz-corr-pos-mod: #94C8F8;
+  --viz-corr-pos-strong: #0091FF;
+
+  /* Spacing Grid (8pt Precision Scale) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Border Radii Scale */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+  
+  --radius-buttons: 8px;
+  --radius-inputs: 8px;
+  --radius-navitems: 8px;
+  --radius-cards: 12px;
+  --radius-categorytiles: 24px;
+  --radius-statblocks: 12px;
+
+  /* Shadows & Elevation */
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-popover: 0 16px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Z-Index Hierarchy */
+  --z-base: 0;
+  --z-card: 1;
+  --z-sticky: 40;
+  --z-header: 50;
+  --z-dropdown: 70;
+  --z-modal: 100;
+  --z-popover: 120;
+  --z-toast: 200;
+  --z-tooltip: 300;
+
+  /* Motion & Easing Curves (Emil Craft Standards) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --transition-fast: 140ms cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-normal: 220ms cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-spring: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}

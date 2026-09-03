@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Typography Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-hero-heading: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', ui-monospace, SFMono-Regular, monospace;
+  
+  /* Aliases */
+  --font-geist: var(--font-sans);
+  --font-lyon-display: var(--font-hero-heading);
+  --font-suisse-intl: var(--font-sans);
+  --font-roboto-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
+
+  /* Typography Scale */
+  --text-2xs: 10px;
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-display-sm: 48px;
+  --text-display: 64px;
+
+  /* Line Heights */
+  --leading-none: 1.0;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+}
+
+/* Base Body Typography */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  letter-spacing: -0.01em;
+}
+
+/* Headings — Inter with precise tracking */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+/* Hero Exclusive Serif Headings */
+.font-hero,
+.hero-heading {
+  font-family: var(--font-hero-heading) !important;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Tabular & Monospace Numbers */
+.tabular,
+.font-mono,
+.mono-label {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.mono-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* Paragraphs & Lists */
+p {
+  color: var(--color-ink-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 68ch;
+}

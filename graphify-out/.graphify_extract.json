@@ -1,0 +1,683 @@
+{
+  "nodes": [
+    {
+      "id": "api_client_checkhealth",
+      "label": "checkHealth",
+      "file_type": "code",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "api_client_uploadfile",
+      "label": "uploadFile",
+      "file_type": "code",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "api_client_generatestory",
+      "label": "generateStory",
+      "file_type": "code",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
+      "id": "api_client_chatwithdata",
+      "label": "chatWithData",
+      "file_type": "code",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L65",
+      "_origin": "ast"
+    },
+    {
+      "id": "layout_navigationbar_tabid",
+      "label": "TabId",
+      "file_type": "code",
+      "source_file": "frontend/src/components/layout/NavigationBar.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "pages_qualityaudit_qualityaudit",
+      "label": "QualityAudit",
+      "file_type": "code",
+      "source_file": "frontend/src/components/pages/QualityAudit.tsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "ui_skeletonloader_skeletonloader",
+      "label": "SkeletonLoader",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ui/SkeletonLoader.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "hooks_useanalysis_analysisstage",
+      "label": "AnalysisStage",
+      "file_type": "code",
+      "source_file": "frontend/src/hooks/useAnalysis.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "hooks_useanalysis_useanalysis",
+      "label": "useAnalysis",
+      "file_type": "code",
+      "source_file": "frontend/src/hooks/useAnalysis.ts",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "hooks_usechat_usechat",
+      "label": "useChat",
+      "file_type": "code",
+      "source_file": "frontend/src/hooks/useChat.ts",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_filemetadata",
+      "label": "FileMetadata",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_cleaningaudititem",
+      "label": "CleaningAuditItem",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_cleaningsummary",
+      "label": "CleaningSummary",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_histogrambin",
+      "label": "HistogramBin",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_numericstats",
+      "label": "NumericStats",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_topvalueitem",
+      "label": "TopValueItem",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L74",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_categoricalstats",
+      "label": "CategoricalStats",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L80",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_datestats",
+      "label": "DateStats",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L98",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_columnprofile",
+      "label": "ColumnProfile",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L114",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_qualityflag",
+      "label": "QualityFlag",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L128",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_flagseveritycount",
+      "label": "FlagSeverityCount",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L137",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_qualityreport",
+      "label": "QualityReport",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L143",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_correlationpair",
+      "label": "CorrelationPair",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L156",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_correlationreport",
+      "label": "CorrelationReport",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L166",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_forecastperiod",
+      "label": "ForecastPeriod",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L171",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_actualvspredicted",
+      "label": "ActualVsPredicted",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L178",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_predictionreport",
+      "label": "PredictionReport",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L183",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_insightcard",
+      "label": "InsightCard",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L203",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_aistoryreport",
+      "label": "AIStoryReport",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L215",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_chatmessage",
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L220",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_chatrequest",
+      "label": "ChatRequest",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L225",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_chatresponse",
+      "label": "ChatResponse",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L231",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_types_uploadresponse",
+      "label": "UploadResponse",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L236",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_app",
+      "target": "hooks_useanalysis_useanalysis",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "api_client_uploadfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "pages_qualityaudit_qualityaudit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "layout_navigationbar_tabid",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client",
+      "target": "src_types_aistoryreport",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client",
+      "target": "src_types_chatmessage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "api_client",
+      "target": "src_types_chatresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/api/client.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_animatedhistogram",
+      "target": "src_types_histogrambin",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/AnimatedHistogram.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_categorybar",
+      "target": "src_types_topvalueitem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/CategoryBar.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_predictionchart",
+      "target": "src_types_forecastperiod",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/PredictionChart.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_scatterplot",
+      "target": "src_types_actualvspredicted",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/ScatterPlot.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_columninspector",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/ColumnInspector.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_columninspector",
+      "target": "src_types_columnprofile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/ColumnInspector.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_dashboardoverview",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/DashboardOverview.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_dataassistant",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/DataAssistant.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_dataassistant",
+      "target": "hooks_usechat_usechat",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/DataAssistant.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory",
+      "target": "src_types_aistoryreport",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory",
+      "target": "api_client_generatestory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory",
+      "target": "ui_skeletonloader_skeletonloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_predictionlab",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/PredictionLab.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_qualityaudit",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/QualityAudit.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_uploadpage",
+      "target": "hooks_useanalysis_analysisstage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/UploadPage.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_useanalysis",
+      "target": "api_client_uploadfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/hooks/useAnalysis.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_useanalysis",
+      "target": "src_types_uploadresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/hooks/useAnalysis.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usechat",
+      "target": "api_client_chatwithdata",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/hooks/useChat.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "hooks_usechat",
+      "target": "src_types_chatmessage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/hooks/useChat.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_handleretrainmodel",
+      "target": "api_client_uploadfile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory_handlegeneratestory",
+      "target": "api_client_generatestory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_animatedhistogram_animatedhistogramprops",
+      "target": "src_types_histogrambin",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/AnimatedHistogram.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_categorybar_categorybarprops",
+      "target": "src_types_topvalueitem",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/CategoryBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_predictionchart_predictionchartprops",
+      "target": "src_types_forecastperiod",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/PredictionChart.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "charts_scatterplot_scatterplotprops",
+      "target": "src_types_actualvspredicted",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/charts/ScatterPlot.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_columninspector_columninspectorprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/ColumnInspector.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_dashboardoverview_dashboardoverviewprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/DashboardOverview.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_dataassistant_dataassistantprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/DataAssistant.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_insightsstory_insightsstoryprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/InsightsStory.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_predictionlab_predictionlabprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/PredictionLab.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_qualityaudit_qualityauditprops",
+      "target": "src_types_uploadresponse",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/QualityAudit.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "pages_uploadpage_uploadpageprops",
+      "target": "hooks_useanalysis_analysisstage",
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/pages/UploadPage.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
