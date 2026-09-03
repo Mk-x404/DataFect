@@ -4,13 +4,8 @@ import time
 import re
 import requests
 from typing import Dict, List, Any, Tuple
-import google.generativeai as genai
-from google.generativeai.types import RequestOptions
-
-# Configure API Key
+# Gemini API configuration
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-if GEMINI_API_KEY:
-    genai.configure(api_key=GEMINI_API_KEY)
 
 def clean_json_string(text: str) -> str:
     """Extract JSON block from markdown wrapped response if present."""
@@ -18,14 +13,6 @@ def clean_json_string(text: str) -> str:
     if match:
         return match.group(1).strip()
     return text.strip()
-
-def get_gemini_client():
-    if not os.environ.get("GEMINI_API_KEY"):
-        return None
-    try:
-        return genai.GenerativeModel("gemini-3.6-flash")
-    except Exception:
-        return None
 
 def extract_dataset_summary(summary_json: Dict[str, Any]) -> Dict[str, Any]:
     """
