@@ -185,8 +185,8 @@ export function UploadPage({
     let title = "Dataset Processing Failed";
     let helpfulTip = "Review your file format and ensure it contains well-structured tabular data with headers.";
     if (isConnection) {
-      title = "Unable to Process Dataset";
-      helpfulTip = "We were unable to complete the analysis request. Please verify your file and try uploading again.";
+      title = "Server Waking Up";
+      helpfulTip = "Free-tier cloud servers sleep when idle and take ~30 seconds to cold boot. The server is awake now — click Try Again below to proceed.";
     } else if (isEncoding) {
       title = "File Encoding Unreadable";
       helpfulTip = "We couldn't decode the file characters. Try re-saving your dataset as UTF-8 CSV or standard Excel (.xlsx).";

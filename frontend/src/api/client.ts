@@ -19,7 +19,7 @@ export const API_BASE = getApiBase();
 /**
  * Resilient fetch wrapper with clear diagnostic error reporting.
  */
-async function apiFetch(endpoint: string, options: RequestInit = {}): Promise<Response> {
+async function apiFetch(endpoint: string, options: RequestInit = {}, retries = 1): Promise<Response> {
   const url = endpoint.startsWith('http') ? endpoint : `${API_BASE}${endpoint}`;
   try {
     return await fetch(url, {
@@ -27,9 +27,14 @@ async function apiFetch(endpoint: string, options: RequestInit = {}): Promise<Re
       ...options,
     });
   } catch (err: any) {
+    if (retries > 0 && (err.name === 'TypeError' || err.message?.toLowerCase().includes('fetch') || err.message?.toLowerCase().includes('network'))) {
+      // Free-tier cloud instances take a few seconds to spin up from sleep. Automatically retry.
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      return apiFetch(endpoint, options, retries - 1);
+    }
     if (err.name === 'TypeError' || err.message?.toLowerCase().includes('fetch') || err.message?.toLowerCase().includes('network')) {
       throw new Error(
-        `Unable to reach the analysis service. Please check your network connection and try again.`
+        `Unable to reach the analysis service. The server was waking up from idle mode. Please try uploading once more.`
       );
     }
     throw err;
