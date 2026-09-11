@@ -18,5 +18,20 @@ node_modules/
 dist/
 *.local
 
-# Logs
+# Logs & Cache
 *.log
+graphify-out/
+.vercel/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Pruned out-of-scope agents (kept local only)
+.agents/Skills/agency-salesforce-architect/
+.agents/Skills/agency-unity-architect/
+.agents/Skills/agency-unreal-multiplayer-architect/
+.agents/Skills/gsap-*
+.agents/gsap-*
+.agents/lottie-animation.md
