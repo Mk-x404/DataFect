@@ -28,10 +28,38 @@ graphify-out/
 *.sqlite
 *.sqlite3
 
-# Pruned out-of-scope agents (kept local only)
+# Pruned out-of-scope agents & skills (kept local only)
 .agents/Skills/agency-salesforce-architect/
 .agents/Skills/agency-unity-architect/
 .agents/Skills/agency-unreal-multiplayer-architect/
+.agents/Skills/agency-xr-interface-architect/
+.agents/Skills/agency-aeo-foundations-architect/
+.agents/Skills/agency-agentic-identity-trust-architect/
+.agents/Skills/agency-automation-governance-architect/
+.agents/Skills/agency-autonomous-optimization-architect/
+.agents/Skills/animate/
+.agents/Skills/animation-vocabulary/
+.agents/Skills/apple-design/
+.agents/Skills/emil-design-eng/
+.agents/Skills/find-animation-opportunities/
+.agents/Skills/impeccable/
+.agents/Skills/improve-animations/
+.agents/Skills/pick-ui-library/
+.agents/Skills/prototype/
+.agents/Skills/review-animations/
+.agents/Skills/supabase*/
+.agents/Skills/transitions-*/
+.agents/Skills/vercel-react-native-skills/
+.agents/Skills/vercel-react-view-transitions/
+.agents/Skills/*.skill
 .agents/Skills/gsap-*
 .agents/gsap-*
 .agents/lottie-animation.md
+.agents/SKILL*
+.agents/cs-*
+.agents/design-motion-principles.md
+.agents/motion-design.md
+.agents/web-animation-design.md
+.agents/animated-component-libraries/
+.agents/impeccable/
+.agents/motion-framer/
