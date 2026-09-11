@@ -4,7 +4,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-datafect.vercel.app-00F0FF?style=for-the-badge&logo=vercel&logoColor=white)](https://datafect.vercel.app)
 [![API Health](https://img.shields.io/badge/API%20Status-Healthy-22C55E?style=for-the-badge&logo=render&logoColor=white)](https://datafect.onrender.com/api/health)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](https://github.com/Mk-x404/DataFect)
 
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -246,9 +246,11 @@ Contributions are welcome! To contribute:
 
 ---
 
-## 📄 License
+## 🔒 Copyright & Intellectual Property
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+All rights reserved. © 2026 DataFect / Mk-x404.
+
+This software, its system architecture, and its complete source code are proprietary and the exclusive intellectual property of the author. Unauthorized copying, reproduction, distribution, modification, or commercial exploitation without prior written consent is strictly prohibited.
 
 ---
 
