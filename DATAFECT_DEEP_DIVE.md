@@ -117,7 +117,7 @@ flowchart TD
 
 ### 💼 For Your Resume (Work Experience / Project Section)
 ```markdown
-DataFect — Full-Stack Automated EDA & AutoML Platform (Creator & Architect)
+DataFect — Full-Stack Automated EDA & AutoML Platform (Creator & Architect: Muhib Khan)
 • Engineered a zero-trust automated data analytics engine using Python 3.12, FastAPI, and React 19 that ingests, cleans, and profiles tabular datasets up to 100MB in sub-500ms.
 • Built a self-healing ingestion pipeline supporting CSV, Excel, and JSON with automated encoding recovery (UTF-8, Latin-1) and delimiter sniffing, achieving a 100% resilient parse rate on ragged files.
 • Developed an AutoML lab using Scikit-Learn that auto-trains Linear Regression, Random Forest, and Gradient Boosting models, benchmarking test R² scores (>97%) and normalized feature importances in under 5 seconds.

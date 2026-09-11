@@ -229,5 +229,5 @@ This project is open-source software licensed under the [MIT License](LICENSE).
 ---
 
 <p align="center">
-  Crafted by <a href="https://github.com/Mk-x404">Mk-x404</a>. If you find this project helpful, feel free to give it a ⭐ on GitHub!
+  Crafted by <a href="https://github.com/Mk-x404">Muhib Khan</a>. If you find this project helpful, feel free to give it a ⭐ on GitHub!
 </p>
