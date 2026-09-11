@@ -15,7 +15,7 @@ services:
       - key: ENVIRONMENT
         value: production
       - key: ALLOWED_ORIGINS
-        value: "https://frontend-vert-ten-27.vercel.app,https://frontend-mk-x404s-projects.vercel.app,http://localhost:5173"
+        value: "https://datafect.vercel.app,https://frontend-vert-ten-27.vercel.app,https://frontend-mk-x404s-projects.vercel.app,http://localhost:5173"
       - key: GEMINI_API_KEY
         sync: false
       - key: JWT_SECRET
